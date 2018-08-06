@@ -8,6 +8,8 @@
 
     "build_systems" : [
         {
+            // How to clean up error return value.
+            // https://stackoverflow.com/questions/36611270/how-to-remove-the-windows-path-from-a-sublime-text-3-python-build-error
             "name" : "sat_builder",
             "cmd" : [
                 "gcc",

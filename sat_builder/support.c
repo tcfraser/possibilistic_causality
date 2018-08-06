@@ -22,7 +22,8 @@ void printSupport(FILE *fp, Support *s) {
 Support *readSupport(FILE *fp) {
     /*
      * Returns the next Support found in the file pointer *fp.
-     * Returns NULL pointer if no supports are found in *fp.
+     * Returns NULL pointer if no supports are found in *fp,
+     * or if support is improperly formatted.
      */
 
     if (!scanFileUntil(fp, 's')) {
@@ -45,8 +46,11 @@ Support *readSupport(FILE *fp) {
     uint *d_ptr = s->data; /* need this copy to safely free memory latter */
 
     while (d_ptr - s->data < length) {
-        scanFileUntil(fp, ' ');
-        *(d_ptr++) = fgetc(fp) - '0';
+        if (scanFileUntil(fp, ' ')) {
+            *(d_ptr++) = fgetc(fp) - '0';
+        } else {
+            return NULL;
+        }
     }
 
     return s;

@@ -2,8 +2,11 @@
 
 #include "cnf_file_io.h"
 
-int main() {
+void debugPointerAddress(char *str, void *ptr) {
+    printf("Address of %s is %p (%u).\n", str, ptr, ptr);
+}
 
+int main() {
     printf("Printing the sizes of various types.\n");
     printf("sizeof(char)     = %i\n", sizeof(char));
     printf("sizeof(int)      = %i\n", sizeof(int));
@@ -17,54 +20,42 @@ int main() {
     printf("sizeof(PaPaIdx)  = %i\n", sizeof(PaPaIdx));
     printf("sizeof(PaPaGraph)= %i\n", sizeof(PaPaGraph));
     debugPointerAddress("NULL", NULL);
-
-    FILE* fp = fopen("file_io/test.in", "w+");
-
-    if (fp == NULL) {
-        printf("%s\n", "File returned NULL, exiting.");
-        return 1;
-    }
-
     char *null_ptr_test;
     debugPointerAddress("null_ptr_test", null_ptr_test);
 
-    FILE* gfp = fopen("file_io/example_graphs_file_3.txt", "r");
-    if (gfp == NULL) { return 1; }
+    FILE* fp  = fopen("file_io/test.in", "w+");
+    FILE* gfp = fopen("file_io/tetrahedron_graph.txt", "r");
+    FILE* sfp = fopen("file_io/example_supports_file_3.txt", "r");
+    printf("fp = %p, gfp = %p, sfp = %p\n");
 
+    if (fp == NULL || gfp == NULL || sfp == NULL) {
+        printf("error :: a file pointer was null\n");
+        fclose(fp);
+        fclose(gfp);
+        fclose(sfp);
+        return 1;
+    }
+
+    /* Reading graph data. */
     Graph *g = readGraph(gfp);
-
     printf("Example Graph:\n");
     printGraph(stdout, g);
 
-    FILE* sfp = fopen("file_io/example_supports_file_2.txt", "r");
-
-    if (sfp == NULL) { return 1; }
-
+    /* Reading support data. */
     Support *s = readSupport(sfp);
 
+    if (s == NULL) {
+        printf("error :: readSupport returned NULL pointer \n");
+        return 1;
+    }
     printf("Example Support:\n");
     printSupport(stdout, s);
 
-    uint order = 1;
+    uint order = 3;
 
     pipeline(g, s, order, fp);
 
     freeGraph(g);
     freeSupport(s);
-
-    // uint radices[] = {2, 2, 2, 4, 4, 4, 4};
-    // uint digits[] = {0, 0, 0, 0, 0, 0, 0};
-
-    // MixedRadix exampleMR = { .length = 7, .radices = radices};
-
-    int fpCloseResponse = fclose(fp);
-
-    if (fpCloseResponse == EOF) {
-        printf("%s\n", "File closed unsuccessfully.");
-    } else {
-        printf("%s\n", "File closed successfully.");
-    }
-    printf("fpCloseResponse = %i\n", fpCloseResponse);
-
     return 0;
 }

@@ -1,0 +1,1 @@
+g 10 12 z a z b y b y c x c x d u d u a v a v c w b w d

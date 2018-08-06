@@ -1,9 +1,5 @@
 #include "cnf_file_io.h"
 
-void debugPointerAddress(char *str, void *ptr) {
-    printf("Address of %s is %p (%u).\n", str, ptr, ptr);
-}
-
 void freeClauses(Clauses *clauses) {
     uint c; /* Clause index. */
     for(c = 0; c < clauses->length; ++c) {
@@ -65,7 +61,7 @@ uint computeBVHelperIndex(uint w, uint e, uint numWorlds, uint numEvents, uint o
     return w * numEvents + e + offset;
 }
 
-Clauses *createHelperClauses(uint numWorlds, uint numEvents, uint offset) {
+Clauses *_createHelperClauses(uint numWorlds, uint numEvents, uint offset) {
 
     Clauses *wec = (Clauses *) malloc(sizeof(Clauses));
 
@@ -205,7 +201,7 @@ void pipeline(Graph *g, Support *s, uint order, FILE *fp) {
     }
 
     /*  */
-    Clauses *wec = createHelperClauses(numWorlds, numEvents, bHelperOffet);
+    Clauses *wec = _createHelperClauses(numWorlds, numEvents, bHelperOffet);
     writeClauses(wec, fp);
 
     freeClauses(wec);

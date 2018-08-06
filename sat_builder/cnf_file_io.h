@@ -21,8 +21,4 @@ typedef struct {
     Clause *data;
 } Clauses;
 
-void debugPointerAddress(char *str, void *ptr);
-void freeClauses(Clauses *clauses);
-void writeClause(Clause *clause, FILE *fp);
-void writeClauses(Clauses *clauses, FILE *fp);
 void pipeline(Graph *g, Support *s, uint order, FILE *fp);
