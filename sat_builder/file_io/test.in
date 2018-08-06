@@ -1,0 +1,27 @@
+c ==============================================
+c numWorlds :: 1, numEvents :: 3, order :: 1.
+c Support :: [0 0 0][0 1 0][0 1 1]
+c Graph :: (a,x,b,y,c,z) [x->a,x->b,y->b,y->c,z->c,z->a]
+c PaPaGraph :: [0 2|][0 1|][1 2|]
+c vars {    1 ...     1} are the responses of nonRoot variable 0.
+c vars {    2 ...     2} are the responses of nonRoot variable 1.
+c vars {    3 ...     3} are the responses of nonRoot variable 2.
+c vars {    4 ...     6} are event*world helper variables.
+c ==============================================
+p cnf 6 16
+4 1 2 3 0
+-4 -1 0
+-4 -2 0
+-4 -3 0
+5 1 -2 3 0
+-5 -1 0
+-5 2 0
+-5 -3 0
+6 1 -2 -3 0
+-6 -1 0
+-6 2 0
+-6 3 0
+4 5 6 0
+4 0
+5 0
+6 0

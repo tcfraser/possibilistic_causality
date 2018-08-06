@@ -1,0 +1,32 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+
+    "build_systems" : [
+        {
+            "name" : "sat_builder",
+            "cmd" : [
+                "gcc",
+                "main.c",
+                "cnf_file_io.c",
+                "graph.c",
+                "support.c",
+                "mixedradix.c",
+                "fileio.c",
+                "-o",
+                "temp.exe",
+                "&&",
+                "temp.exe"
+            ],
+            "file_regex": "(.+[^:]):(\\d+):(\\d+): (?:fatal )?((?:error|warning): .+)$",
+            "selector" : "main.c",
+            "path" : "T:/Packages/Cygwin/bin/",
+            "shell" : true,
+            "working_dir" : "$project_path"
+        }
+    ]
+}

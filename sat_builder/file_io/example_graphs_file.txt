@@ -1,0 +1,1 @@
+g 6 7 x a x b y b y c z c z a a c
