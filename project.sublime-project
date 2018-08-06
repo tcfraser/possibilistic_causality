@@ -28,7 +28,7 @@
             "selector" : "main.c",
             "path" : "T:/Packages/Cygwin/bin/",
             "shell" : true,
-            "working_dir" : "$project_path"
+            "working_dir" : "$project_path/sat_builder/"
         }
     ]
 }

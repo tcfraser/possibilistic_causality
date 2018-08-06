@@ -21,4 +21,6 @@ typedef struct {
     Clause *data;
 } Clauses;
 
-void pipeline(Graph *g, Support *s, uint order, FILE *fp);
+void writeCNFForGraphSupportOrder(Graph *g, Support *s, uint order, FILE *fp);
+bool areStringsEqual(char *a, char *b);
+int getCNFOutStatus(FILE *fp);

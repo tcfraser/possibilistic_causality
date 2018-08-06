@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"numWorl",
+				"numWorldEventPairs"
+			],
+			[
 				"parn",
 				"parents_of_c_test"
 			],
@@ -510,24 +514,9 @@
 			[
 				"sep",
 				"separable"
-			],
-			[
-				"nearest",
-				"nearest-neighbor"
 			]
 		]
 	},
-	"buffers":
-	[
-		{
-			"file": "main.c",
-			"settings":
-			{
-				"buffer_size": 1884,
-				"line_ending": "Windows"
-			}
-		}
-	],
 	"build_system": "",
 	"build_system_choices":
 	[
@@ -604,12 +593,48 @@
 		"selected_items":
 		[
 			[
-				"buildview",
-				"Disable/Enable buildview for this window"
+				"toggle zoom",
+				"Origami: Zoom/Unzoom Current Pane (Toggle Zoom)"
+			],
+			[
+				"zoom",
+				"Origami: Zoom/Unzoom Current Pane (Toggle Zoom)"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"unzoom",
+				"Origami: Unzoom Current Pane"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"scope",
+				"Scope Hunter: Show Scope Under Cursor(s)"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"origami",
+				"Origami: Destroy Pane on the Right"
+			],
+			[
+				"new",
+				"File: New View into File"
+			],
+			[
+				"buildview",
+				"Disable/Enable buildview for this window"
 			],
 			[
 				"newfil",
@@ -796,10 +821,6 @@
 				"Convert Case: Title Case"
 			],
 			[
-				"inst",
-				"Package Control: Install Package"
-			],
-			[
 				"add repo",
 				"Package Control: Add Repository"
 			],
@@ -850,10 +871,6 @@
 			[
 				"add e",
 				"Package Control: Add Repository"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"satis",
@@ -1072,19 +1089,31 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/T/GitProjects/possibilistic_causality/sat_builder"
-	],
 	"file_history":
 	[
-		"/C/Users/TC/AppData/Roaming/Sublime Text 3/Settings/SideBarEnhancements.json",
+		"/T/GitProjects/possibilistic_causality/sat_builder/support.c",
+		"/T/GitProjects/possibilistic_causality/sat_builder/file_io/example_supports_file_3.txt",
+		"/T/GitProjects/possibilistic_causality/sat_builder/graph.c",
+		"/T/GitProjects/possibilistic_causality/sat_builder/file_io/tetrahedron_graph.txt",
+		"/T/GitProjects/possibilistic_causality/sat_builder/file_io/test.out",
+		"/T/GitProjects/possibilistic_causality/sat_builder/cnf_file_io.h",
+		"/C/Users/TC/AppData/Roaming/Sublime Text 3/Packages/Default/exec.py",
+		"/T/GitProjects/possibilistic_causality/sat_builder/file_io/example_supports_file_2.txt",
+		"/T/GitProjects/possibilistic_causality/sat_builder/file_io/example_graphs_file_3.txt",
+		"/T/GitProjects/possibilistic_causality/.gitmodules",
+		"/T/GitProjects/possibilistic_causality/sat_builder/sat_builder.sublime-project",
+		"/C/Users/TC/AppData/Roaming/Sublime Text 3/Packages/SublimeGDB/SublimeGDB.sublime-settings",
+		"/C/Users/TC/AppData/Roaming/Sublime Text 3/Packages/User/SublimeGDB.sublime-settings",
+		"/T/GitProjects/possibilistic_causality/sat_builder/file_io/example_graphs_file.txt",
+		"/T/GitProjects/possibilistic_causality/sat_builder/file_io/example_supports_file.txt",
+		"/T/GitProjects/possibilistic_causality/sat_builder/file_io/example_graphs_file_2.txt",
+		"/T/GitProjects/possibilistic_causality/sat_builder/file_io/test.in",
 		"/T/GitProjects/possibilistic_causality/sat_builder/possibilistic_causality.sublime-build",
+		"/C/Users/TC/AppData/Roaming/Sublime Text 3/Settings/SideBarEnhancements.json",
 		"/C/Users/TC/AppData/Roaming/Sublime Text 3/Packages/User/possibilistic_causality.sublime-build",
 		"/T/GitProjects/possibilistic_causality/sat_builder/main_pc.c",
 		"/T/GitProjects/possibilistic_causality/sat_builder/main.c",
 		"/T/GitProjects/possibilistic_causality/sat_builder/cnf_file_io.exe.stackdump",
-		"/T/GitProjects/possibilistic_causality/sat_builder/file_io/test.in",
 		"/T/GitProjects/possibilistic_causality/sat_builder/cnf_file_io_old.c",
 		"/T/GitProjects/possibilistic_causality/sat_builder/ndimarray.c",
 		"/T/GitProjects/possibilistic_causality/sat_builder/main.exe.stackdump",
@@ -1189,23 +1218,7 @@
 		"/T/Google Drive/Master's Project with Rob Spekkens/Writings/Machine Learning/restricted_boltzmann_machine.tex",
 		"/T/Google Drive/Master's Project with Rob Spekkens/Writings/Machine Learning/causal_structure.tex",
 		"/T/Google Drive/Master's Project with Rob Spekkens/Writings/Machine Learning/neural_network.tex",
-		"/T/Google Drive/Master's Project with Rob Spekkens/Writings/Machine Learning/causal_structure_alt.tex",
-		"/T/Google Drive/Master's Project with Rob Spekkens/Writings/Machine Learning/bell_structure.tex",
-		"/T/Google Drive/Master's Project with Rob Spekkens/Writings/Machine Learning/machinelearning.tex",
-		"/T/Google Drive/Master's Project with Rob Spekkens/Writings/Machine Learning",
-		"/T/Google Drive/School/Assignments/PSI/Exploration/Machine Learning/Tutorials/Tutortial4.ipynb",
-		"/T/Google Drive/School/Assignments/PSI/Exploration/Machine Learning/Homework 2/code/Data_Tutorial4/spinConfigs_gaugeTheory_L20.txt",
-		"/T/Google Drive/School/Assignments/PSI/Exploration/Machine Learning/Homework 2/code/results/spinConfigs_Ising_L20.txt_tsne_result.pdf",
-		"/T/Google Drive/School/Assignments/PSI/Exploration/Machine Learning/Homework 2/code/Data_Tutorial4/temperatures_Ising_L20.txt",
-		"/T/Google Drive/School/Assignments/PSI/Exploration/Machine Learning/Homework 2/Tutorial4_Materials/Tutorial4_Materials/Data_Tutorial4/spinConfigs_Ising_L20.txt",
-		"/T/Google Drive/School/Assignments/PSI/Exploration/Machine Learning/Homework 2/tsne_python/tsne_python/tsne.py",
-		"/T/Google Drive/School/Assignments/PSI/Exploration/Machine Learning/Tutorials/Tutorial5_Materials/Tutorial5_Materials/NLL_vs_epoch_T2.269.pdf",
-		"/T/Google Drive/Niamh/feynman_package_by_tc.sty",
-		"/T/Google Drive/School/Assignments/PSI/Review/Quantum Information/Homework 1/homework1.tex",
-		"/T/Google Drive/School/Assignments/PSI/Exploration/Relativisitic Quantum Information",
-		"/T/Google Drive/Master's Project with Rob Spekkens/Writings/Causal Posets/causal_posets.bbl",
-		"/T/Google Drive/School/Assignments/PSI/Review/Quantum Information/Homework 3",
-		"/T/Google Drive/School/Assignments/PSI/Review/Quantum Information/Homework 2/homework2.tex"
+		"/T/Google Drive/Master's Project with Rob Spekkens/Writings/Machine Learning/causal_structure_alt.tex"
 	],
 	"find":
 	{
@@ -1224,6 +1237,40 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"writeGraphSupportOrderFile",
+			"writeClause",
+			"computeBVIndex",
+			"_computeBVHelperIndex",
+			"computeBVHelperIndex",
+			"pipeline",
+			"fpCloseResponse",
+			"a",
+			"u",
+			"createHelperClauses",
+			"pipeline",
+			"Radix",
+			"writeClause",
+			"createHelperClauses",
+			"computeVWEIndex",
+			"computeHelperIndex",
+			"computeWEIndex",
+			"\n",
+			"createWorldEventClauses",
+			"pipeline",
+			"printf",
+			"fprintf(",
+			"printf",
+			"printSupport",
+			"printGraph",
+			"5%u",
+			"%u",
+			"numWorlds * numEvents",
+			"computeVWE",
+			"compute",
+			"computeVWE",
+			"com",
+			"compute",
+			"computeVWEIndex",
 			"scanFileUntil",
 			"{file_base_name}"
 		],
@@ -1240,205 +1287,9 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"groups":
-	[
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 0,
-					"file": "main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1884,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 0,
-								"count": 89,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": 21,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
-			]
-		}
-	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 38.0
 	},
 	"input":
 	{
@@ -1452,17 +1303,31 @@
 				0,
 				0,
 				1,
+				2
+			],
+			[
+				1,
+				0,
+				2,
 				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.5,
 			1.0
 		]
 	},
@@ -1483,6 +1348,10 @@
 	{
 		"height": 0.0
 	},
+	"output.scopehunter.results":
+	{
+		"height": 116.0
+	},
 	"output.sftp":
 	{
 		"height": 0.0
@@ -1491,11 +1360,10 @@
 	{
 		"height": 134.0
 	},
-	"pinned_build_system": "Packages/User/possibilistic_causality.sublime-build",
-	"project": "sat_builder.sublime-project",
+	"pinned_build_system": "sat_builder",
 	"replace":
 	{
-		"height": 54.0
+		"height": 74.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1505,6 +1373,58 @@
 		"selected_items":
 		[
 			[
+				"test",
+				"file_io\\test.out"
+			],
+			[
+				"fileio.c",
+				"fileio.c"
+			],
+			[
+				"cnf",
+				"cnf_file_io.h"
+			],
+			[
+				"mixed",
+				"mixedradix.c"
+			],
+			[
+				"support",
+				"file_io\\example_supports_file_2.txt"
+			],
+			[
+				"cnf_fi",
+				"cnf_file_io.h"
+			],
+			[
+				"cnf_",
+				"cnf_file_io.c"
+			],
+			[
+				"main",
+				"main.c"
+			],
+			[
+				"graph",
+				"graph.h"
+			],
+			[
+				"graph.",
+				"graph.h"
+			],
+			[
+				".in",
+				"file_io\\factoring_489347.in"
+			],
+			[
+				"file_",
+				"file_io\\test.in"
+			],
+			[
+				"file_io\\",
+				"file_io\\test.in"
+			],
+			[
 				"main_pc",
 				"sat_builder\\main_pc.c"
 			],
@@ -1513,20 +1433,8 @@
 				"sat_builder\\graph.c"
 			],
 			[
-				"cnf",
-				"sat_builder\\cnf_file_io.c"
-			],
-			[
-				"graph",
-				"sat_builder\\graph.h"
-			],
-			[
 				"ixed",
 				"sat_builder\\mixedradix.h"
-			],
-			[
-				"mixed",
-				"sat_builder\\mixedradix.c"
 			],
 			[
 				"dimacs",
@@ -1889,10 +1797,6 @@
 				"notes\\cosmology\\cosmology.tex"
 			],
 			[
-				"main",
-				"document\\main.tex"
-			],
-			[
 				"quantu",
 				"notes\\quantum-physics-three\\quantum-physics-three.tex"
 			],
@@ -1979,42 +1883,6 @@
 			[
 				"",
 				"cv.tex"
-			],
-			[
-				"scope",
-				"tex\\latex\\scope.sty"
-			],
-			[
-				"draft",
-				"tex\\latex\\draft.sty"
-			],
-			[
-				"fan",
-				"tex\\latex\\fancyvec.sty"
-			],
-			[
-				"matham",
-				"tex\\latex\\mathmacros.sty"
-			],
-			[
-				"stocah",
-				"notes\\stochastic-processes\\stochastic-processes.tex"
-			],
-			[
-				"gnereal",
-				"notes\\general-relativity\\general-relativity.tex"
-			],
-			[
-				"gener",
-				"notes\\general-relativity\\general-relativity.tex"
-			],
-			[
-				"refer",
-				"document\\references.bib"
-			],
-			[
-				"workspace",
-				"quantum_tools\\symmetries\\workspace.py"
 			]
 		],
 		"width": 0.0
@@ -2037,7 +1905,6 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -2045,7 +1912,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 238.0,
+	"side_bar_width": 210.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

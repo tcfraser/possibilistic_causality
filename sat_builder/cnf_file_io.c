@@ -9,20 +9,20 @@ void freeClauses(Clauses *clauses) {
     free(clauses);
 }
 
-void writeClause(Clause *clause, FILE *fp) {
+void _writeClause(Clause *clause, FILE *fp) {
     for(uint l = 0; l < clause->length; ++l) {
         fprintf(fp, "%i ", clause->literals[l]);
     }
     fprintf(fp, "0\n"); /* DIMACS format is to end clauses with terminating zero character. */
 }
 
-void writeClauses(Clauses *clauses, FILE *fp) {
+void _writeClauses(Clauses *clauses, FILE *fp) {
     for(uint c = 0; c < clauses->length; ++c) {
-        writeClause(clauses->data + c, fp);
+        _writeClause(clauses->data + c, fp);
     }
 }
 
-int computeBVIndex(uint v, uint *event, uint *world, uint order, PaPaGraph *papag, uint offset) {
+int _computeBVIndex(uint v, uint *event, uint *world, uint order, PaPaGraph *papag, uint offset) {
     assert(0 <= v < papag->length);
     int idx = offset;
     uint k;
@@ -57,7 +57,7 @@ int computeBVIndex(uint v, uint *event, uint *world, uint order, PaPaGraph *papa
 }
 
 /* Computes the world-support variable index. */
-uint computeBVHelperIndex(uint w, uint e, uint numWorlds, uint numEvents, uint offset) {
+uint _computeBVHelperIndex(uint w, uint e, uint numWorlds, uint numEvents, uint offset) {
     return w * numEvents + e + offset;
 }
 
@@ -80,7 +80,7 @@ Clauses *_createHelperClauses(uint numWorlds, uint numEvents, uint offset) {
         literals = (int *) malloc(numEvents * sizeof(int));
 
         for (e = 0; e < numEvents; ++e) {
-            literals[e] = computeBVHelperIndex(w, e, numWorlds, numEvents, offset);
+            literals[e] = _computeBVHelperIndex(w, e, numWorlds, numEvents, offset);
         }
 
         (wec->data)[c].length = numEvents;
@@ -93,7 +93,7 @@ Clauses *_createHelperClauses(uint numWorlds, uint numEvents, uint offset) {
         literals = (int *) malloc(numWorlds * sizeof(int));
 
         for (w = 0; w < numWorlds; ++w) {
-            literals[w] = computeBVHelperIndex(w, e, numWorlds, numEvents, offset);
+            literals[w] = _computeBVHelperIndex(w, e, numWorlds, numEvents, offset);
         }
 
         (wec->data)[c].length = numWorlds;
@@ -104,7 +104,7 @@ Clauses *_createHelperClauses(uint numWorlds, uint numEvents, uint offset) {
     return wec;
 }
 
-void pipeline(Graph *g, Support *s, uint order, FILE *fp) {
+void writeCNFForGraphSupportOrder(Graph *g, Support *s, uint order, FILE *fp) {
 
     PaPaGraph *papag = gToPaPaG(g);
 
@@ -179,12 +179,12 @@ void pipeline(Graph *g, Support *s, uint order, FILE *fp) {
         event = s->data; /* reset */
         for (e = 0; e < numEvents; ++e)
         {
-            z = computeBVHelperIndex(w, e, numWorlds, numEvents, bHelperOffet);
+            z = _computeBVHelperIndex(w, e, numWorlds, numEvents, bHelperOffet);
 
             pZClause->literals[0] = z;
             for (v = 0; v < numNonRootVariables; ++ v)
             {
-                evw = computeBVIndex(v, event, world, order, papag, 1);
+                evw = _computeBVIndex(v, event, world, order, papag, 1);
 
                 nZClauses->data[v].literals[1] = evw;
                 nZClauses->data[v].literals[0] = -z;
@@ -192,8 +192,8 @@ void pipeline(Graph *g, Support *s, uint order, FILE *fp) {
                 pZClause->literals[v+1] = -evw;
             }
 
-            writeClause(pZClause, fp);
-            writeClauses(nZClauses, fp);
+            _writeClause(pZClause, fp);
+            _writeClauses(nZClauses, fp);
 
             event += numNonRootVariables; /* increment pointer by the number of variables. see support.c for reason why */
         }
@@ -202,7 +202,7 @@ void pipeline(Graph *g, Support *s, uint order, FILE *fp) {
 
     /*  */
     Clauses *wec = _createHelperClauses(numWorlds, numEvents, bHelperOffet);
-    writeClauses(wec, fp);
+    _writeClauses(wec, fp);
 
     freeClauses(wec);
     free(pZClause->literals);
@@ -210,4 +210,46 @@ void pipeline(Graph *g, Support *s, uint order, FILE *fp) {
     freeClauses(nZClauses);
     free(world);
     freePaPaGraph(papag);
+}
+
+int getCNFOutStatus(FILE *fp) {
+    char cur = fgetc(fp);
+
+    if (cur == EOF) {
+        return -1; /* file ends */
+    }
+    if (cur != 's') {
+        if (scanFileUntil(fp, '\n')) {
+            return getCNFOutStatus(fp);
+        } else {
+            return -1; /* no more newlines */
+        }
+    } else {
+        char status[14]; /* UNSATISFIABLE is 13 characters long plus '\0' char */
+        if (fscanf(fp, " %s", &status) != 1) {
+            return -1; /* improper format. line does not start with "p ..." */
+        } else {
+            if (areStringsEqual(status, "SATISFIABLE")) {
+                return 1;
+            } else if (areStringsEqual(status, "UNSATISFIABLE")) {
+                return 0;
+            } else {
+                return -1; /* improper format. p is followed by something other than SATISFIABLE or UNSATISFIABLE */
+            }
+        }
+    }
+}
+
+bool areStringsEqual(char *a, char *b)
+{
+    int i;
+    bool result = true;
+    for(i=0; a[i]!='\0' || b[i]!='\0'; i++) {
+        // printf("%c, %c\n", a[i], b[i]);
+        if(a[i] != b[i]) {
+            result = false;
+            break;
+        }
+    }
+    return result;
 }
