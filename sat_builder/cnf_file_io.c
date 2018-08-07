@@ -229,10 +229,12 @@ int getCNFOutStatus(FILE *fp) {
         if (fscanf(fp, " %s", &status) != 1) {
             return -1; /* improper format. line does not start with "p ..." */
         } else {
-            if (areStringsEqual(status, "SATISFIABLE")) {
+            if        (areStringsEqual(status, "SATISFIABLE")) {
                 return 1;
             } else if (areStringsEqual(status, "UNSATISFIABLE")) {
                 return 0;
+            } else if (areStringsEqual(status, "UNKNOWN")) {
+                return 2;
             } else {
                 return -1; /* improper format. p is followed by something other than SATISFIABLE or UNSATISFIABLE */
             }

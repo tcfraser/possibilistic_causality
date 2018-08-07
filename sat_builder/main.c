@@ -55,7 +55,7 @@ int main() {
             printf("Example Support:\n");
             printSupport(stdout, s);
 
-            writeCNFForGraphSupportOrder(g, s, 3, fpi);
+            writeCNFForGraphSupportOrder(g, s, 2, fpi);
 
             freeSupport(s);
         }
