@@ -35,7 +35,7 @@ int main() {
     FILE* fpi = fopen("file_io/test.in", "w+");
     FILE* fpo = fopen("file_io/test.out", "r");
     FILE* gfp = fopen("file_io/tetrahedron_graph.txt", "r");
-    FILE* sfp = fopen("file_io/example_supports_file_3.txt", "r");
+    FILE* sfp = fopen("file_io/example_supports_file_5.txt", "r");
     printf("fp = %p, fpo = %p, gfp = %p, sfp = %p\n",
         fpi, fpo, gfp, sfp);
 
@@ -55,7 +55,7 @@ int main() {
             printf("Example Support:\n");
             printSupport(stdout, s);
 
-            writeCNFForGraphSupportOrder(g, s, 2, fpi);
+            writeCNFForGraphSupportOrder(g, s, 5, fpi);
 
             freeSupport(s);
         }
